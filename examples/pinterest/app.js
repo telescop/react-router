@@ -36,7 +36,7 @@ const Modal = createReactClass({
 
 const App = createReactClass({
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // if we changed routes...
     if ((
       nextProps.location.key !== this.props.location.key &&
@@ -90,7 +90,7 @@ const Index = createReactClass({
         <p>
           Click on an item and see its rendered as a modal, then copy/paste the
           url into a different browser window (with a different session, like
-          Chrome -> Firefox), and see that the image does not render inside the
+          Chrome -&gt; Firefox), and see that the image does not render inside the
           overlay. One URL, two session dependent screens :D
         </p>
 

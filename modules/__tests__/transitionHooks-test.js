@@ -299,8 +299,8 @@ describe('When a router enters a branch', function () {
 
       render(
         <Router history={history}
-                routes={routes}
-                onUpdate={execNextStep}
+          routes={routes}
+          onUpdate={execNextStep}
         />, node, execNextStep)
     })
   })
@@ -336,8 +336,8 @@ describe('When a router enters a branch', function () {
 
       render(
         <Router history={history}
-                routes={routes}
-                onUpdate={execNextStep}
+          routes={routes}
+          onUpdate={execNextStep}
         />, node, execNextStep)
     })
   })
@@ -368,8 +368,8 @@ describe('When a router enters a branch', function () {
 
       render(
         <Router history={history}
-                routes={routes}
-                onUpdate={execNextStep}
+          routes={routes}
+          onUpdate={execNextStep}
         />, node, execNextStep)
     })
   })
@@ -418,13 +418,13 @@ describe('Changing location', () => {
     cb(new Error('transition error'))
   }
   const createRoutes = ({ enter, change }) => [
-    <Route path="/" onChange={change ? onChange : noop} component={Text('Home')}>
+    <Route key="1" path="/" onChange={change ? onChange : noop} component={Text('Home')}>
       <Route path="child1" component={Text('Child1')} />
       <Route path="child2" component={Text('Child2')} />
     </Route>,
-    <Route path="/foo" onEnter={enter ? onEnter : noop} component={Text('Foo')} />,
-    <Route path="/bar" component={Text('Bar')} />,
-    <Route path="/error" onEnter={enter ? onEnterError : noop} component={Text('Error')}/>
+    <Route key="2" path="/foo" onEnter={enter ? onEnter : noop} component={Text('Foo')} />,
+    <Route key="3" path="/bar" component={Text('Bar')} />,
+    <Route key="4" path="/error" onEnter={enter ? onEnterError : noop} component={Text('Error')}/>
   ]
 
   beforeEach(() => {

@@ -18,7 +18,7 @@ const App = ({ children }) => (
 
       <li><Link      to="/users/ryan" activeStyle={ACTIVE}>/users/ryan</Link></li>
       <li><Link      to={{ pathname: '/users/ryan', query: { foo: 'bar' } }}
-                                      activeStyle={ACTIVE}>/users/ryan?foo=bar</Link></li>
+        activeStyle={ACTIVE}>/users/ryan?foo=bar</Link></li>
 
       <li><Link      to="/about"      activeStyle={ACTIVE}>/about</Link></li>
     </ul>

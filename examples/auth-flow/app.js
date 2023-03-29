@@ -19,7 +19,7 @@ const App = createReactClass({
     })
   },
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     auth.onChange = this.updateAuth
     auth.login()
   },
@@ -62,6 +62,8 @@ const Login = withRouter(
   createReactClass({
 
     getInitialState() {
+      this.email = React.createRef()
+      this.pass = React.createRef()
       return {
         error: false
       }
@@ -70,8 +72,8 @@ const Login = withRouter(
     handleSubmit(event) {
       event.preventDefault()
 
-      const email = this.refs.email.value
-      const pass = this.refs.pass.value
+      const email = this.email.current.value
+      const pass = this.pass.current.value
 
       auth.login(email, pass, (loggedIn) => {
         if (!loggedIn)
@@ -90,8 +92,8 @@ const Login = withRouter(
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <label><input ref="email" placeholder="email" defaultValue="joe@example.com" /></label>
-          <label><input ref="pass" placeholder="password" /></label> (hint: password1)<br />
+          <label><input ref={this.email} placeholder="email" defaultValue="joe@example.com" /></label>
+          <label><input ref={this.pass} placeholder="password" /></label> (hint: password1)<br />
           <button type="submit">login</button>
           {this.state.error && (
             <p>Bad login information</p>

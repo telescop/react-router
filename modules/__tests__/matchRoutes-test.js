@@ -364,6 +364,7 @@ describe('matchRoutes', function () {
 
       jsxRoutes = createRoutes([
         <Route
+          key="a"
           name="users"
           path=":groupId/users"
           getChildRoutes={getChildRoutes}

@@ -80,10 +80,10 @@ module.exports = config => {
     },
 
     webpack: {
-      devtool: 'cheap-module-inline-source-map',
+      devtool: 'inline-cheap-module-source-map',
       module: {
-        loaders: [
-          { test: /\.js$/, exclude: /node_modules/, loader: 'babel' }
+        rules: [
+          { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
         ]
       },
       plugins: [

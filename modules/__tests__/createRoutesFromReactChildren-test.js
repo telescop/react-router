@@ -69,9 +69,9 @@ describe('createRoutesFromReactChildren', function () {
 
   it('works with falsy children', function () {
     const routes = createRoutesFromReactChildren([
-      <Route path="/one" component={Parent} />,
+      <Route key="1" path="/one" component={Parent} />,
       null,
-      <Route path="/two" component={Parent} />,
+      <Route key="2" path="/two" component={Parent} />,
       undefined
     ])
 
@@ -88,6 +88,7 @@ describe('createRoutesFromReactChildren', function () {
 
   it('works with comments', function () {
     const routes = createRoutesFromReactChildren(
+      // eslint-disable-next-line react/jsx-no-comment-textnodes
       <Route path="/one" component={Parent}>
         // This is a comment.
         <Route path="/two" component={Hello} />

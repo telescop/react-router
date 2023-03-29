@@ -19,7 +19,7 @@ const App = ({ children, routes }) => {
       </aside>
       <main>
         <ul className="breadcrumbs-list">
-          {routes.map((item, index) =>
+          {routes.map((item, index) => (
             <li key={index}>
               <Link
                 onlyActiveOnIndex={true}
@@ -28,7 +28,7 @@ const App = ({ children, routes }) => {
                 {item.component.title}
               </Link>
               {(index + 1) < depth && '\u2192'}
-            </li>
+            </li>)
           )}
         </ul>
         {children}
